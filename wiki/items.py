@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy.contrib.loader.processor import MapCompose, TakeFirst
+from scrapy.loader.processors import MapCompose, TakeFirst
 
 
 class WikiItem(scrapy.Item):
@@ -64,4 +64,9 @@ class WikiItem(scrapy.Item):
     sub_category = scrapy.Field(
         output_processor=TakeFirst(),
     )
-    path = scrapy.Field()
+    article_id = scrapy.Field(
+        output_processor=TakeFirst(),
+    )
+    path = scrapy.Field(
+        output_processor=TakeFirst(),
+    )
