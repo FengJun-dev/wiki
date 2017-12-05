@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8266c28e-788d-4fe1-9aec-9a1d0a363fd5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wiki/filter_quality.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wiki/log.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wiki/spiders/core.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/items.py" afterPath="$PROJECT_DIR$/wiki/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/pipelines.py" afterPath="$PROJECT_DIR$/wiki/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/settings.py" afterPath="$PROJECT_DIR$/wiki/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" afterPath="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" />
     </list>
     <ignored path="wiki.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -387,6 +378,14 @@
       <option name="presentableId" value="Default" />
       <updated>1499593659576</updated>
     </task>
+    <task id="LOCAL-00001" summary="filter">
+      <created>1512487656657</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512487656657</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -423,6 +422,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="filter" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="6" />
@@ -444,6 +447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -580,6 +584,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -587,6 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
