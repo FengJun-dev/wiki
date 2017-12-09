@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8266c28e-788d-4fe1-9aec-9a1d0a363fd5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/filter_quality.py" afterPath="$PROJECT_DIR$/wiki/filter_quality.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/log.py" afterPath="$PROJECT_DIR$/wiki/log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/settings.py" afterPath="$PROJECT_DIR$/wiki/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" afterPath="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" />
     </list>
     <ignored path="wiki.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wiki_spider.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wiki_spider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wiki/spiders/wiki_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
+            <state relative-caret-position="157">
+              <caret line="870" column="22" selection-start-line="870" selection-start-column="22" selection-end-line="870" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -34,31 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shijisanjiazhu(史記三家注).jl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shijisanjiazhu(史記三家注).jl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shiji(史記).jl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shiji(史記).jl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81237">
-              <caret line="6136" column="13" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="不符合质量要求的书籍.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../WikiBook2/log/不符合质量要求的书籍.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,8 +51,8 @@
       <file leaf-file-name="log.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wiki/log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="26" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="26" />
+            <state relative-caret-position="747">
+              <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -77,8 +61,8 @@
       <file leaf-file-name="书籍信息汇总.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../WikiBook2/书籍信息汇总.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="165">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -87,9 +71,14 @@
       <file leaf-file-name="filter_quality.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wiki/filter_quality.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding>
+                <marker date="1512657910000" expanded="true" signature="53:398" ph="..." />
+                <marker date="1512657910000" expanded="true" signature="129:357" ph="..." />
+                <marker date="1512657910000" expanded="true" signature="452:698" ph="..." />
+                <marker date="1512657910000" expanded="true" signature="528:659" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,16 +88,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -132,17 +111,19 @@
         <option value="$PROJECT_DIR$/wiki/spiders/haha.html" />
         <option value="$PROJECT_DIR$/wiki/spiders/filter_quality.py" />
         <option value="$PROJECT_DIR$/wiki/filter_file.py" />
-        <option value="$PROJECT_DIR$/wiki/settings.py" />
         <option value="$PROJECT_DIR$/wiki/spiders/core.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/wiki/pipelines.py" />
         <option value="$PROJECT_DIR$/wiki/items.py" />
-        <option value="$PROJECT_DIR$/wiki/filter_quality.py" />
-        <option value="$PROJECT_DIR$/wiki/log.py" />
-        <option value="$PROJECT_DIR$/../../WikiBook2/log/不符合质量要求的书籍.json" />
-        <option value="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" />
-        <option value="$PROJECT_DIR$/../../WikiBook2/书籍信息汇总.json" />
         <option value="$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shiji(史記).jl" />
+        <option value="$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shijisanjiazhu(史記三家注).jl" />
+        <option value="$PROJECT_DIR$/../../WikiBook2/史部/维基文库/beishi(北史).jl" />
+        <option value="$PROJECT_DIR$/wiki/log.py" />
+        <option value="$PROJECT_DIR$/wiki/filter_quality.py" />
+        <option value="$PROJECT_DIR$/wiki/settings.py" />
+        <option value="$PROJECT_DIR$/../../WikiBook2/log/不符合质量要求的书籍.json" />
+        <option value="$PROJECT_DIR$/../../WikiBook2/书籍信息汇总.json" />
+        <option value="$PROJECT_DIR$/wiki/spiders/wiki_spider.py" />
       </list>
     </option>
   </component>
@@ -161,7 +142,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -174,10 +155,16 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../eva-react" />
     <property name="FullScreen" value="true" />
@@ -385,20 +372,37 @@
       <option name="project" value="LOCAL" />
       <updated>1512487656657</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="filter">
+      <created>1512487737747</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512487737747</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="893" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14620535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1456422" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2739726" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739726" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -406,7 +410,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -479,7 +482,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
+          <folding>
+            <marker date="1512657910000" expanded="true" signature="53:398" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="129:357" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="452:698" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="528:659" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -513,7 +521,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1512657910000" expanded="true" signature="53:398" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="129:357" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="452:698" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="528:659" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -530,7 +543,7 @@
         <state relative-caret-position="525">
           <caret line="36" column="37" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="37" />
           <folding>
-            <element signature="e#152#165#0" expanded="true" />
+            <element signature="e#152#165#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,7 +579,7 @@
         <state relative-caret-position="375">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#152#165#0" expanded="true" />
+            <element signature="e#152#165#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -588,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../wikivenv/lib/python3.6/site-packages/scrapy/loader/processors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -608,15 +613,23 @@
         <state relative-caret-position="1035">
           <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
           <folding>
-            <element signature="e#152#165#0" expanded="true" />
+            <element signature="e#152#165#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/filter_quality.py">
+    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/xintangshu(新唐書).jl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="-11775">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -629,69 +642,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shiji(史記).jl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="24297">
+          <caret line="6742" column="145" selection-start-line="6742" selection-start-column="145" selection-end-line="6742" selection-end-column="145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shijisanjiazhu(史記三家注).jl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="7003" column="1120" selection-start-line="7003" selection-start-column="1120" selection-end-line="7003" selection-end-column="1120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/beishi(北史).jl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="6200" column="1" selection-start-line="6200" selection-start-column="1" selection-end-line="6200" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wiki/filter_quality.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <marker date="1512657910000" expanded="true" signature="53:398" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="129:357" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="452:698" ph="..." />
+            <marker date="1512657910000" expanded="true" signature="528:659" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WikiBook2/log/不符合质量要求的书籍.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wiki/log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../WikiBook2/log/不符合质量要求的书籍.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/xintangshu(新唐書).jl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11775">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="747">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../WikiBook2/书籍信息汇总.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shiji(史記).jl">
+    <entry file="file://$PROJECT_DIR$/wiki/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81237">
-          <caret line="6136" column="13" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="13" />
+        <state relative-caret-position="282">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wiki/spiders/wiki_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
+        <state relative-caret-position="157">
+          <caret line="870" column="22" selection-start-line="870" selection-start-column="22" selection-end-line="870" selection-end-column="22" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../WikiBook2/史部/维基文库/shijisanjiazhu(史記三家注).jl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>

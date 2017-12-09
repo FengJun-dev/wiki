@@ -65,3 +65,5 @@ def log_book_info(log_book_file, article_id, book_name, en_book):
                 with open(log_book_file, 'w') as k:
                     new_data = json.dumps(new_data, indent=4, ensure_ascii=False)
                     k.write(new_data)
+        else:
+            return

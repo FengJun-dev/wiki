@@ -40,10 +40,19 @@ class WikiSpider(scrapy.Spider):
             # book_name = book_link.xpath('text()').extract()
             book_title = book_link.xpath('@title').extract()
 
-            if link is not None:
-                if self.count_book < len(link):
+            duplicated_link = []
+            duplicated_book_title = []
+            for i in link:
+                if i not in duplicated_link:
+                    duplicated_link.append(i)
+            for k in book_title:
+                if k not in duplicated_book_title:
+                    duplicated_book_title.append(k)
+
+            if duplicated_link is not None:
+                if self.count_book < len(duplicated_link):
                     link = response.urljoin(link[self.count_book])
-                    book_name = book_title[self.count_book]
+                    book_name = duplicated_book_title[self.count_book]
 
                     if '页面不存在' in book_name:
                         self.count_book += 1
@@ -61,6 +70,7 @@ class WikiSpider(scrapy.Spider):
                             'book_name': book_name,
                         },
                         callback=self.parse_bookcat,
+                        dont_filter=True,
                     )
                 else:
                     return
@@ -89,7 +99,8 @@ class WikiSpider(scrapy.Spider):
                 if len(i) != 0:
                     new_content.append(i)
 
-        if not book_reach_quality(response, quality_xpath):
+        # 低质量文章
+        if book_reach_quality(response, quality_xpath) == 'low quality':
             self.count_book += 1
             link = response.urljoin(main_link)
             yield scrapy.Request(
@@ -97,52 +108,101 @@ class WikiSpider(scrapy.Spider):
                 callback=self.parse,
                 dont_filter=True,
             )
+        # 书籍目录无法判断质量的文章
+        elif book_reach_quality(response, quality_xpath) == 'can not judge':
+            if not catalog_list:
+                yield scrapy.Request(
+                    main_link,
+                    meta={
+                        'main_link': main_link,
+                        'category': category,
+                        'book_name': book_name,
+                    },
+                    callback=self.parse_article,
+                )
 
-        if not catalog_list:
-            yield scrapy.Request(
-                main_link,
-                meta={
-                    'main_link': main_link,
-                    'category': category,
-                    'book_name': book_name,
-                },
-                callback=self.parse_article,
-            )
+            for catalog_link in catalog_list:
+                link = catalog_link.xpath('a/@href').extract()
+                title = catalog_link.xpath('a/text()').extract()
+                title_content = catalog_link.xpath('text()').extract()
 
-        for catalog_link in catalog_list:
-            link = catalog_link.xpath('a/@href').extract()
-            title = catalog_link.xpath('a/text()').extract()
-            title_content = catalog_link.xpath('text()').extract()
+                if link is not None:
+                    if self.article_id < len(link):
+                        link = response.urljoin(link[self.article_id])
+                        title = title[self.article_id]
+                        if self.article_id < len(title_content):
+                            title_content = title_content[self.article_id].strip()
+                            title = title + ':' + title_content
+                        else:
+                            title = title
 
-            if link is not None:
-                if self.article_id < len(link):
-                    link = response.urljoin(link[self.article_id])
-                    title = title[self.article_id]
-                    if self.article_id < len(title_content):
-                        title_content = title_content[self.article_id].strip()
-                        title = title + ':' + title_content
+                        yield scrapy.Request(
+                            link,
+                            meta={
+                                'main_link': main_link,
+                                'book_link': book_link,
+                                'category': category,
+                                'book_name': book_name,
+                                'title': title,
+                            },
+                            callback=self.parse_article2,
+                        )
                     else:
-                        title = title
+                        self.count_book += 1
+                        self.article_id = 0
+                        yield scrapy.Request(
+                            main_link,
+                            callback=self.parse,
+                            dont_filter=True,
+                        )
 
-                    yield scrapy.Request(
-                        link,
-                        meta={
-                            'main_link': main_link,
-                            'book_link': book_link,
-                            'category': category,
-                            'book_name': book_name,
-                            'title': title,
-                        },
-                        callback=self.parse_article2,
-                    )
-                else:
-                    self.count_book += 1
-                    self.article_id = 0
-                    yield scrapy.Request(
-                        main_link,
-                        callback=self.parse,
-                        dont_filter=True,
-                    )
+        # 高质量文章
+        elif book_reach_quality(response, quality_xpath) == 'high quality':
+            if not catalog_list:
+                yield scrapy.Request(
+                    main_link,
+                    meta={
+                        'main_link': main_link,
+                        'category': category,
+                        'book_name': book_name,
+                    },
+                    callback=self.parse_high_quality_article,
+                )
+
+            for catalog_link in catalog_list:
+                link = catalog_link.xpath('a/@href').extract()
+                title = catalog_link.xpath('a/text()').extract()
+                title_content = catalog_link.xpath('text()').extract()
+
+                if link is not None:
+                    if self.article_id < len(link):
+                        link = response.urljoin(link[self.article_id])
+                        title = title[self.article_id]
+                        if self.article_id < len(title_content):
+                            title_content = title_content[self.article_id].strip()
+                            title = title + ':' + title_content
+                        else:
+                            title = title
+
+                        yield scrapy.Request(
+                            link,
+                            meta={
+                                'main_link': main_link,
+                                'book_link': book_link,
+                                'category': category,
+                                'book_name': book_name,
+                                'title': title,
+                            },
+                            callback=self.parse_high_quality_article2,
+                        )
+                    else:
+                        self.count_book += 1
+                        self.article_id = 0
+                        yield scrapy.Request(
+                            main_link,
+                            callback=self.parse,
+                            dont_filter=True,
+                        )
 
     # current_link = 'https://zh.wikisource.org/wiki/史記/卷001'
     def parse_article(self, response):
@@ -278,16 +338,115 @@ class WikiSpider(scrapy.Spider):
             )
         )
 
-        '''quality_xpath = '//*[@id="mw-normal-catlinks"]/ul/li/a/text()'
-        if not article_reach_quality(response, quality_xpath):
+        quality_xpath = '//*[@id="mw-normal-catlinks"]/ul/li/a/text()'
+        if article_reach_quality(response, quality_xpath) == 'low_quality':
             self.count_book += 1
-            log_low_quality_article(log_filename, book_name, en_book)
+            # log_low_quality_article(log_filename, book_name, en_book)
             link = response.urljoin(main_link)
             yield scrapy.Request(
                 link,
                 callback=self.parse,
                 dont_filter=True,
-            )'''
+            )
+        else:
+            title = response.meta['title']
+            if title:
+                title = title
+            else:
+                title = response.xpath('//*[@id="mw-content-text"]/div/table[1]/tr/td[2]/text()').extract_first().strip()
+            en_title = '-'.join(
+                PinyinHelper.convertToPinyinFromSentence(
+                    title.replace(':', ''),
+                    pinyinFormat=PinyinFormat.WITHOUT_TONE
+                )
+            ).replace('》', '')
+
+            content_xpath = '''
+            //*[@id="mw-content-text"]/div/p|
+            //span[@class="mw-headline"]'''
+            content = response.xpath(content_xpath).xpath('string(.)').extract()
+            new_content = []
+            for i in content:
+                if len(i) != 0:
+                    if '[' and ']' not in i:
+                        new_content.append(i)
+                    else:
+                        r = re.compile('\[.*?\]')
+                        new = r.sub('', i)
+                        new_content.append(new)
+
+            reference_xpath = '//*[@id="mw-content-text"]/div/ol[@class="references"]'
+            reference = response.xpath(reference_xpath).xpath('string(.)').extract()
+
+            new_content.extend(reference)
+
+            # '//*[@id=".E6.9C.AC.E7.B4.80"]
+
+            filename = '-'.join([en_main_category, en_category, en_title])
+
+            file_name = (base + main_category).replace('-', '')
+            second_filename = (file_name + '/' + category[0:4]).replace('-', '')
+            self.article_id += 1
+            article_id = self.article_id
+            log_book_info(log_book_file, article_id, book_name, en_book)
+
+            l = ItemLoader(item=WikiItem(), response=response)
+            l.add_value('filename', filename)
+            l.add_value('title', title)
+            l.add_value('main_category', main_category)
+            l.add_value('en_main_category', en_main_category)
+            l.add_value('en_category', en_category)
+            l.add_value('category', category)
+            l.add_value('book', book_name)
+            l.add_value('en_book', en_book)
+            l.add_value('content', new_content)
+            l.add_value('en_title', en_title)
+            # l.add_value('en_sub_category', en_sub_category)
+            # l.add_value('sub_category', sub_category)
+            l.add_value('path', second_filename)
+            l.add_value('article_id', article_id)
+            yield l.load_item()
+
+            next_link = response.urljoin(book_link)
+            yield scrapy.Request(
+                next_link,
+                meta={
+                    'main_link': main_link,
+                    'category': category,
+                    'book_name': book_name,
+                    'title': title,
+                },
+                callback=self.parse_bookcat,
+                dont_filter=True,
+            )
+
+    def parse_high_quality_article(self, response):
+        main_link = response.meta['main_link']
+
+        main_category = '史部'
+        en_main_category = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                main_category,
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
+
+        category = response.meta['category']
+        en_category = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                category.replace(':', ''),
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
+
+        book_name = response.meta['book_name']
+        en_bookstrip = book_name.strip().replace('（', '').replace('）', '')
+        en_book = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                en_bookstrip,
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
 
         title = response.meta['title']
         if title:
@@ -302,8 +461,102 @@ class WikiSpider(scrapy.Spider):
         ).replace('》', '')
 
         content_xpath = '''
-        //*[@id="mw-content-text"]/div/p|
-        //span[@class="mw-headline"]'''
+                //*[@id="mw-content-text"]/div/p|
+                //span[@class="mw-headline"]'''
+
+        content = response.xpath(content_xpath).xpath('string(.)').extract()
+        new_content = []
+        for i in content:
+            if len(i) != 0:
+                if '[' and ']' not in i:
+                    new_content.append(i)
+                else:
+                    r = re.compile('\[.*?\]')
+                    new = r.sub('', i)
+                    new_content.append(new)
+
+        reference_xpath = '//*[@id="mw-content-text"]/div/ol[@class="references"]'
+        reference = response.xpath(reference_xpath).xpath('string(.)').extract()
+
+        new_content.extend(reference)
+
+        # '//*[@id=".E6.9C.AC.E7.B4.80"]
+        filename = '-'.join([en_main_category, en_category, en_title])
+
+        file_name = (base + main_category).replace('-', '')
+        second_filename = (file_name + '/' + category).replace('-', '')
+        article_id = 1
+        log_book_info(log_book_file, article_id, book_name, en_book)
+
+        l = ItemLoader(item=WikiItem(), response=response)
+        l.add_value('filename', filename)
+        l.add_value('title', title)
+        l.add_value('main_category', main_category)
+        l.add_value('en_main_category', en_main_category)
+        l.add_value('en_category', en_category)
+        l.add_value('category', category)
+        l.add_value('book', book_name)
+        l.add_value('en_book', en_book)
+        l.add_value('content', new_content)
+        l.add_value('en_title', en_title)
+        # l.add_value('en_sub_category', en_sub_category)
+        # l.add_value('sub_category', sub_category)
+        l.add_value('path', second_filename)
+        l.add_value('article_id', article_id)
+        yield l.load_item()
+
+        next_link = main_link
+        self.count_book += 1
+        yield scrapy.Request(
+            next_link,
+            callback=self.parse,
+            dont_filter=True,
+        )
+
+    def parse_high_quality_article2(self, response):
+        book_link = response.meta['book_link']
+        main_link = response.meta['main_link']
+
+        main_category = '史部'
+        en_main_category = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                main_category,
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
+
+        category = response.meta['category']
+        en_category = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                category.replace(':', ''),
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
+
+        book_name = response.meta['book_name']
+        en_bookstrip = book_name.strip().replace('（', '').replace('）', '')
+        en_book = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                en_bookstrip,
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        )
+
+        title = response.meta['title']
+        if title:
+            title = title
+        else:
+            title = response.xpath('//*[@id="mw-content-text"]/div/table[1]/tr/td[2]/text()').extract_first().strip()
+        en_title = '-'.join(
+            PinyinHelper.convertToPinyinFromSentence(
+                title.replace(':', ''),
+                pinyinFormat=PinyinFormat.WITHOUT_TONE
+            )
+        ).replace('》', '')
+
+        content_xpath = '''
+                //*[@id="mw-content-text"]/div/p|
+                //span[@class="mw-headline"]'''
         content = response.xpath(content_xpath).xpath('string(.)').extract()
         new_content = []
         for i in content:
@@ -359,11 +612,6 @@ class WikiSpider(scrapy.Spider):
             callback=self.parse_bookcat,
             dont_filter=True,
         )
-
-
-
-
-
 
 """# current_link = 'https://zh.wikisource.org/wiki/Wikisource:%E5%8F%B2%E6%9B%B8'
     def parse(self, response):

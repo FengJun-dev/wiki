@@ -3,18 +3,22 @@ def book_reach_quality(response, quality_xpath=None):
     if quality:
         if quality.isnumeric():
             if quality == '100%' or quality == '75%':
-                return True
+                return 'high quality'
             else:
-                return False
+                return 'low quality'
         else:
-            return True
+            return 'can not judge'
+    else:
+        return 'can not judge'
 
 
 def article_reach_quality(response, quality_xpath):
-    if book_reach_quality(response, quality_xpath):
-        return True
     quality = response.xpath(quality_xpath).extract_first()
-    if quality == '100%' or quality == '75%':
-        return True
+    if quality:
+        if quality == '100%' or quality == '75%':
+            return 'high_quality'
+        else:
+            return 'low_quality'
     else:
-        return False
+        return 'low_quality'
+
