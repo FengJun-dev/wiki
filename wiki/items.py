@@ -19,7 +19,10 @@ class WikiItem(scrapy.Item):
         output_processor=TakeFirst(),
     )
     content = scrapy.Field(
-        input_processor=MapCompose()
+        input_processor=MapCompose(),
+    )
+    reference = scrapy.Field(
+        input_processor=MapCompose(),
     )
     page = scrapy.Field(
         input_processor=MapCompose(),

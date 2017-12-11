@@ -1,7 +1,7 @@
 import json
 
 # log_low_quality_filename = '/users/Apple/desktop/WikiBook2/log/不符合质量要求的书籍.json'
-# log_book_file = '/Users/apple/Desktop/WikiBook2/书籍信息汇总.json'
+# log_book_file = '/Users/apple/Desktop/WikiBook2/书籍信息汇总2.json'
 
 
 def log_low_quality_article(log_low_quality_filename, book_name, en_book):
@@ -21,14 +21,15 @@ def log_low_quality_article(log_low_quality_filename, book_name, en_book):
             en_name = en_book.replace('-', '')
             log_info = {"ch_name": ch_name, "type": "tw", "en_name": en_name}
             # print('log_info: %s' % log_info)
-            for i in data:  # 做了两次
+            '''for i in data:  # 做了两次
                 if en_book == i['en_name']:
                     # print('en_book: %s' % en_book)
                     print("k['en_name']: %s" % i['en_name'])
                     break
                 else:
                     data.append(log_info)
-                # print('data: %s' % data)
+                # print('data: %s' % data)'''
+            data.append(log_info)
             new_data = []
             for k in data:
                 if k not in new_data:
@@ -67,3 +68,5 @@ def log_book_info(log_book_file, article_id, book_name, en_book):
                     k.write(new_data)
         else:
             return
+
+# log_book_info(log_book_file, 1, "霍小玉傳", "huo-xiao-yu-chuan")
